@@ -1,23 +1,33 @@
+/* Reset default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   padding: 20px 20px 60px;
   width: 100%;
-  max-width: 100%;
   margin: 0 auto;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
   background-image: url('/images/darkbgimagen.png');
-  background-size: cover;
+  background-size: cover; /* Ensure the image covers the entire viewport */
   background-position: center;
   background-repeat: no-repeat;
+  min-height: 100vh; /* Ensure the body takes full screen height */
 }
 
 .flex-container {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap; /* Allow children to wrap on smaller screens */
+  justify-content: center; /* Center elements */
   text-align: center;
 }
 
 h1 {
   color: #c39e5f;
 }
+
 .container {
   padding: 16px;
 }
@@ -26,8 +36,8 @@ h1 {
   background-color: #c39e5f;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  width: 400px; /* Set a larger width */
-  max-width: 100%; /* Ensure it doesn't overflow */
+  width: 90%; /* Use a percentage for responsiveness */
+  max-width: 400px; /* Limit the maximum size */
   height: auto; /* Adjust height based on content */
   padding: 24px; /* Increase padding for a bigger look */
   border-radius: 12px; /* Add rounded corners for a modern design */
@@ -45,14 +55,12 @@ h4 {
   font-weight: bold; /* Make the text bold */
 }
 
-
 .textContainer {
   text-align: center;
   font-family: Arial, sans-serif;
   margin-top: 50px;
   color: white;
 }
-
 
 .text {
   text-align: center;
@@ -69,11 +77,12 @@ h4 {
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
   .flex-container {
-    flex-direction: column;
+    flex-direction: column; /* Stack elements vertically */
   }
 
   body {
-    padding: 0px;
+    padding: 10px; /* Reduce padding for smaller screens */
+    background-size: contain; /* Adjust the background size for mobile */
   }
 
   .text {
@@ -84,11 +93,15 @@ h4 {
 
 @media (max-width: 600px) {
   .text {
-    font-size: 14vw; /* Further reduce font size for very small screens */
-    margin-top: 10vh; /* Adjust top margin */
+    font-size: 14vw; /* Further adjust font size for very small screens */
+    margin-top: 44vh; /* Adjust top margin */
+  }
+
+  .offer-box {
+    padding: 16px; /* Reduce padding for smaller screens */
   }
 
   body {
-    padding: 10px;
+    background-size: cover; /* Ensure the background covers the screen */
   }
 }
