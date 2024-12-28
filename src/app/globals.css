@@ -10,7 +10,7 @@ body {
   width: 100%;
   margin: 0 auto;
   overflow-x: hidden; /* Prevent horizontal scrolling */
-  background-image: url('/images/darkbgimagen.png');
+  background-image: url('/images/darkbgimage.png');
   background-size: cover; /* Ensure the image covers the entire viewport */
   background-position: center;
   background-repeat: no-repeat;
@@ -94,7 +94,7 @@ h4 {
 @media (max-width: 600px) {
   .text {
     font-size: 14vw; /* Further adjust font size for very small screens */
-    margin-top: 44vh; /* Adjust top margin */
+    margin-top: 60vh; /* Adjust top margin */
   }
 
   .offer-box {
