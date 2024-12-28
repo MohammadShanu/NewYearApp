@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 const CountdownTimer: React.FC = () => {
@@ -21,7 +22,7 @@ const CountdownTimer: React.FC = () => {
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         setTimeLeft(
-          `${padNumber(days)}:${padNumber(hours)}:${padNumber(minutes)}:${padNumber(seconds)}`
+          `${padNumber(days)} D: ${padNumber(hours)} H: ${padNumber(minutes)} M: ${padNumber(seconds)} S`
         );
       }
     }, 1000);
@@ -43,9 +44,12 @@ const CountdownTimer: React.FC = () => {
 
 const Home: React.FC = () => {
   return (
+    <>
     <div className="background">
       <CountdownTimer />
     </div>
+    <div><Link href={'https://amzn.to/4fAjULQ'}>New year offers 2025 on mobile Phones</Link></div>
+    </>
   );
 };
 
