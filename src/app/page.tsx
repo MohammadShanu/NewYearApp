@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import AmzLink from './components/AmzLink';
 
 const CountdownTimer: React.FC = () => {
   const targetDate = new Date('2025-01-01T00:00:00').getTime(); // Set target date here
@@ -22,7 +23,7 @@ const CountdownTimer: React.FC = () => {
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         setTimeLeft(
-          `${padNumber(days)} D: ${padNumber(hours)} H: ${padNumber(minutes)} M: ${padNumber(seconds)} S`
+          `${padNumber(days)} : ${padNumber(hours)} : ${padNumber(minutes)} : ${padNumber(seconds)}`
         );
       }
     }, 1000);
@@ -36,7 +37,7 @@ const CountdownTimer: React.FC = () => {
 
   return (
     <div className="textContainer">
-      <h1 className="text">New Year Countdown</h1>
+      {/* <h1 className="text">New Year Countdown</h1> */}
       <h1 className="text">{timeLeft}</h1>
     </div>
   );
@@ -48,7 +49,8 @@ const Home: React.FC = () => {
     <div className="background">
       <CountdownTimer />
     </div>
-    <div><Link href={'https://amzn.to/4fAjULQ'}>New year offers 2025 on mobile Phones</Link></div>
+    <AmzLink />
+    
     </>
   );
 };
